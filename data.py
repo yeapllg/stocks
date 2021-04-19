@@ -40,7 +40,7 @@ def stock_163(list_codes,start_time,end_time):
         # print(code[1:],':','完成')
         time.sleep(1)
 
-
+# tushare接口（备用）
 def stock_tushare(id, start_time, end_time):
     ts.set_token('你的token，没有的去https://tushare.pro/申请')
     pro = ts.pro_api()
@@ -67,7 +67,7 @@ def stock_tushare(id, start_time, end_time):
 
 def main():
     # 获取正常上市交易的股票
-    ts.set_token('d8fd19aa83d0274f2b18269d82ff6748f7798dbc7e9be405999e712e')
+    ts.set_token('你的token，没有的去https://tushare.pro/申请')
     pro = ts.pro_api()
     data = pro.stock_basic(exchange='', list_status='L', fields='ts_code,name')
     list_codes = []
