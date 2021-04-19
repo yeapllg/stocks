@@ -42,7 +42,7 @@ def stock_163(list_codes,start_time,end_time):
 
 # tushare接口（备用）
 def stock_tushare(id, start_time, end_time):
-    ts.set_token('你的token，没有的去https://tushare.pro/申请')
+    ts.set_token('你的token，没有的去https://tushare.pro/register?reg=92 申请')
     pro = ts.pro_api()
     data1 = ts.pro_bar(ts_code=id,adj='qfq', start_date=start_time, end_date=end_time)
     data2 = pro.daily_basic(ts_code=id,start_date=start_time, end_date=end_time, fields='ts_code,trade_date,turnover_rate,total_mv,circ_mv')
@@ -67,7 +67,7 @@ def stock_tushare(id, start_time, end_time):
 
 def main():
     # 获取正常上市交易的股票
-    ts.set_token('你的token，没有的去https://tushare.pro/申请')
+    ts.set_token('你的token，没有的去https://tushare.pro/register?reg=92 申请')
     pro = ts.pro_api()
     data = pro.stock_basic(exchange='', list_status='L', fields='ts_code,name')
     list_codes = []
