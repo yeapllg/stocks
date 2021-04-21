@@ -47,7 +47,7 @@ def back_testing():
                 if i+k+4<len(data_close):
                     if data_close[i+k] < data_close[i+k+4]:
                         if k == 8 and i>=6:
-                            buy = data_open[i+1]
+                            buy = data_open[i-1]
                             sell = max(data_high[i-6:i-2])   #出现买入信号候第二天以开盘价买入，看一周之内是否有合适卖出机会
                             list_code[j[:-4]] = str(round((sell - buy)*100/buy,2))+'%'
                         continue
