@@ -46,9 +46,9 @@ def back_testing():
             for k in range(9):
                 if i+k+4<len(data_close):
                     if data_close[i+k] < data_close[i+k+4]:
-                        if k == 8 and i>=4:
+                        if k == 8 and i>=6:
                             buy = data_open[i+1]
-                            sell = max(data_high[i+2:i+7])   #出现买入信号候第二天以开盘价买入，看一周之内是否有合适卖出机会
+                            sell = max(data_high[i-6:i-2])   #出现买入信号候第二天以开盘价买入，看一周之内是否有合适卖出机会
                             list_code[j[:-4]] = str(round((sell - buy)*100/buy,2))+'%'
                         continue
                     else:
@@ -59,6 +59,8 @@ def back_testing():
     print('最大收益:',str(max([float(i[:-1]) for i in list(list_code.values())]))+'%')
     print('最小收益:',str(min([float(i[:-1]) for i in list(list_code.values())]))+'%')
     print('平均收益:',str(round(sum([float(i[:-1]) for i in list(list_code.values())])/len(list(list_code.values())),2))+'%')
+    print('正收益：',len([float(i[:-1]) for i in list(list_code.values()) if i[0]!='-']))
+    print('负收益：',len([float(i[:-1]) for i in list(list_code.values()) if i[0]=='-']))
 
 #back_testing()
 #dress()
