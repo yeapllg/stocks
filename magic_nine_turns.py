@@ -64,4 +64,9 @@ def back_testing():
 
 #back_testing()
 #dress()
-    
+
+"""
+懒人获取办法：  
+一：下载云看盘软件(PC端，支持win，linux，MacOS)，在左侧工具栏里找到对应的方法，点击即可查看最新的选股结果，官网地址：https://www.yunkanpan.com  
+二：下载微财讯App(手机端，支持安卓和IOS)，在首页更多里，工具栏选项。官网地址：https://www.weicaixun.com
+"""
